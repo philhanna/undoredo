@@ -32,7 +32,7 @@ class UndoRedo:
         return self.value
 
     def __str__(self):
-        sb = f'Value="{self.value}", UndoStack=[{self.undo_stack}], RedoStack=[{self.redo_stack}]'
+        sb = f'value="{self.value}", undo_stack={self.undo_stack}, redo_stack={self.redo_stack}'
         return sb
 
 
