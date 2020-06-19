@@ -11,8 +11,8 @@ class TestSetValue(TestCase):
     def test_set_value(self):
         self.undoredo.set_value('A')
         self.assertEqual('A', self.undoredo.value)
-        self.assertTrue(self.undoredo.undo_stack.is_empty())
-        self.assertTrue(self.undoredo.redo_stack.is_empty())
+        self.assertEqual(1, self.undoredo.undo_stack.depth())
+        self.assertEqual(0, self.undoredo.redo_stack.depth())
 
     def test_set_same_value(self):
         self.undoredo.set_value('A')

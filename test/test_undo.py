@@ -14,12 +14,12 @@ class TestUndo(TestCase):
         new_value = self.undoredo.undo()
         self.assertEqual('A', new_value)
         self.assertEqual('A', self.undoredo.value)
-        self.assertTrue(self.undoredo.undo_stack.is_empty())
+        self.assertEqual(1, self.undoredo.undo_stack.depth())
         self.assertEqual(['B'], self.undoredo.redo_stack.stack)
 
     def test_undo_empty(self):
         self.undoredo.set_value('A')
-        self.assertTrue(self.undoredo.undo_stack.is_empty())
+        self.assertEqual(1, self.undoredo.undo_stack.depth())
         self.assertTrue(self.undoredo.redo_stack.is_empty())
         new_value = self.undoredo.undo()
         self.assertIsNone(new_value)
