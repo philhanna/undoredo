@@ -1,7 +1,11 @@
 #! /usr/bin/python3
 import sys
-sys.path.append("..")
-from undo import UndoRedo
+
+try:
+    from undo import UndoRedo
+except:
+    sys.path.append("..")
+    from undo import UndoRedo
 
 
 class Mainline:
