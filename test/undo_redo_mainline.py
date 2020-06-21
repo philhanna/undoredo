@@ -48,7 +48,7 @@ class Mainline:
 
             # Help
             if first.startswith("H"):
-                pass
+                self.help()
 
             # Set
             elif first.startswith("S"):
@@ -74,6 +74,26 @@ class Mainline:
         for status in history:
             print(status)
 
+    def help(self):
+        """ Explains commands and session operation """
+        print("""
+This is an interactive demonstration of an undo/redo session.
+It is a loop that:
+
+    - prompts for a command (only the first letter is important)
+    - executes it, and
+    - displays the results
+
+The commands are:
+
+    - s[et] <value> : Sets the current value
+    - u[ndo]        : Undoes the last command
+    - r[edo]        : Redoes the last command
+    - h[elp]        : Displays this help text
+    - q[uit]        : To exit from the loop
+
+At the end of the session, the log of all commands is displayed.
+""")
 
 #   ============================================================
 #   Mainline
